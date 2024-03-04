@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/styles/contactstyle.css">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+</head>
+<body>
+    
+    <section class ="contact">
+        <h2>Contact Us</h2>
+
+        <form class="Form-Contact" >
+            <div class="input-box">
+                <div class="input-field field">
+                   <input type="text" placeholder="Full Name" id="name" class="item" autocomplete="off">
+                   <div class="error-txt" >Full Name can't  be blank</div>
+                </div>
+                <div class="input-field field">
+                    <input type="text" placeholder="Email Address" id="email" class="item" autocomplete="off">
+                    <div class="error-txt" >Email Address  can't  be blank</div>
+                 </div>
+                 <div class="input-field field">
+                    <input type="text" placeholder="Phone Number" id="phone" class="item" autocomplete="off">
+                    <div class="error-txt" >Phone Number can't  be blank</div>
+                 </div>
+                 <div class="input-field field">
+                    <input type="text" placeholder="Subject" id="subject" class="item" autocomplete="off">
+                    <div class="error-txt" >Subject can't  be blank</div>
+                 </div>
+                 
+            </div>
+            <div class="input-field field">
+                <textarea name="text" id="message" cols="30" rows="10" placeholder="Your massage" class="item" autocomplete="off"></textarea>
+                <div class="error-txt" >Message can't  be blank</div>
+             </div>
+             <button type="submit"> Send Message</button>
+        </form>
+    </section>
+    
+    <script src="../assets/styles/contact.js">
+    </script>
+</body>
+</html>
