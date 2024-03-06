@@ -1,32 +1,42 @@
-const name =document.getElementById("name");
+const form=document.querySelector("form");
+const fullname =document.getElementById("name");
 const email =document.getElementById("email");
 const phone =document.getElementById("phone");
 const subject=document.getElementById("subject");
 const  message=document.getElementById("message");
 
-const submit=document.getElementsByClassName("Form-Contact")[0];
 
-submit.addEventListener('submit',(e)=>{
-e.preventDefault();
-console.log("Clicked")
-})
+
+// submit.addEventListener('submit',(e)=>{
+// e.preventDefault();
+// console.log("Clicked")
+// })
 
 function sendEmail(){
+    const bodyMessage=`Name: ${fullname.Value}<br>
+     Email: ${email.value}<br>
+      Phone Number: ${phone.value} <br>
+      Subject: ${subject.value}<br>
+       Message:${message.value}`;
+
     Email.send({
         Host:"smtp.elasticemail.com",
         Username: "vinothvkm135@gmail.com",
-        Password: "62E83080537A52282A1438D58BDCDE7C35D6503A0F8E83B84D6E69AE8CE778A6724B99F7232E21CDA9627D72CAC7BBDA",
-        To: "kingvkm135@gmail.com",
-        From: document.getElementById("email").value,
-        Subject: document.getElementById("subject").value,
-        Body: document.getElementById("message").value
+        Password: "3BC2DAF71A0A33978EC5B1164F5706C78D2F",
+        To: "vinothvkm135@gmail.com",
+        From:"vinothvkm135@gmail.com",
+        Subject: subject.value,
+        Body: bodyMessage
     }).then(
         message => alert("Email sent successfully!")
     );
 }
 
-document.getElementById('emailForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form submission
+form.addEventListener("submit", (e)=>{
+    e.preventDefault();
+// })
+// document.getElementById('emailForm').addEventListener('submit', function(event) {
+//     event.preventDefault(); // Prevent form submission
 
     // Send email when the form is submitted
     sendEmail();
